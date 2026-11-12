@@ -1,82 +1,160 @@
-html {
-    background-color: rgba(27, 38, 54, 1);
-    text-align: center;
-    color: white;
+:root {
+    --primary-color: #90a955;
+    --secondary-color: #4f772d;
+    --text-color: #ecf39e;
+    --border: #90a955;
 }
 
 body {
     margin: 0;
-    color: white;
-    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-}
-
-@font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 400;
-    src: local(""),
-    url("assets/fonts/nunito-v16-latin-regular.woff2") format("woff2");
-}
-
-#app {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    display: flex;
+    font-family:
+        system-ui,
+        -apple-system,
+        sans-serif;
     height: 100vh;
-    text-align: center;
+    overflow: hidden; /* Evita barras de desplazamiento innecesarias */
 }
 
-.logo {
+/*---------------------------------------- Navbar (Sidebar) ----------------------------------------*/
+
+nav {
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    justify-content: flex-start;
+    align-items: stretch;
+    border-right: 2px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+#nav-header {
+    padding: 25px 20px 15px 20px;
+}
+
+#nav-title {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+}
+
+/* Contenedor de Usuario Estilizado */
+#container-user {
+    width: 120px;
+    height: 120px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    margin: 30px auto;
     display: block;
-    width: 50%;
-    height: 50%;
-    margin: auto;
-    padding: 10% 0 0;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url("./assets/images/logo-universal.png");
-    background-size: 100% 100%;
-    background-origin: content-box;
+    background-image: radial-gradient(
+        circle,
+        var(--primary-color) 10px,
+        transparent 3px
+    );
+    background-size: 8px 8px;
 }
 
-.result {
-    height: 20px;
-    line-height: 20px;
-    margin: 1.5rem auto;
+#user-name {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    color: var(--text-color);
 }
 
-.input-box .btn {
-    width: 60px;
-    height: 30px;
-    line-height: 30px;
-    border-radius: 3px;
+nav hr {
+    width: 85%;
     border: none;
-    margin: 0 0 0 20px;
-    padding: 0 8px;
-    cursor: pointer;
+    height: 1px;
+    background-color: var(--primary-color);
+    margin: 15px auto;
 }
 
-.input-box .btn:hover {
-    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-    color: #333333;
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    width: 100%;
 }
 
-.input-box .input {
-    border: none;
-    border-radius: 3px;
-    outline: none;
-    height: 30px;
-    line-height: 30px;
-    padding: 0 10px;
-    background-color: rgba(240, 240, 240, 1);
-    -webkit-font-smoothing: antialiased;
+nav li {
+    width: 100%;
+    transition: all 0.3s ease;
 }
 
-.input-box .input:hover {
-    border: none;
-    background-color: rgba(255, 255, 255, 1);
+/* Enlaces de navegación limpios */
+nav li a {
+    display: block;
+    padding: 14px 25px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
 }
 
-.input-box .input:focus {
-    border: none;
-    background-color: rgba(255, 255, 255, 1);
+nav li a:hover {
+    background-color: rgba(236, 243, 158, 0.1);
+    border-left: 4px solid var(--text-color);
+    padding-left: 30px; /* Efecto deslizante elegante */
+}
+
+#nav-footer {
+    margin-top: auto; /* Empuja el footer hacia abajo si sobra espacio */
+    padding: 20px;
+}
+
+/*---------------------------------------- Fin Navbar ----------------------------------------*/
+
+#primary {
+    flex: 1; /* Ocupa el espacio restante de la pantalla fluidamente */
+    height: calc(50vh - 40px);
+    margin: 20px;
+    display: flex;
+    gap: 20px; /* Espaciado moderno entre la gráfica y la lista */
+}
+
+#graph {
+    background-color: var(--secondary-color);
+    width: 80%;
+    height: 100%;
+    display: flex;
+    padding: 20px;
+    border: 3px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+#list-sales {
+    background-color: var(--secondary-color);
+    width: 20%;
+    height: 100%;
+    margin-left: 0; /* Sustituido por el gap en #primary */
+    padding: 20px;
+    border: 3px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+#list-sales ul {
+    list-style: none;
+    padding: 0;
+}
+
+#list-sales li {
+    margin: 10px 0;
+}
+#list-sales canvas {
+    max-width: 100% !important;
+    max-height: calc(100% - 30px) !important; /* Deja espacio para el título */
+    object-fit: contain;
 }

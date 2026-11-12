@@ -2,6 +2,7 @@ package main
 
 import (
 	"embed"
+	"flash/backend"
 
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
@@ -15,9 +16,11 @@ func main() {
 	// Create an instance of the app structure
 	app := NewApp()
 
+	BackendManager := backend.NewBackendManager()
+
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:  "flash",
+		Title:  "Ecco-Flash",
 		Width:  1024,
 		Height: 768,
 		AssetServer: &assetserver.Options{
@@ -27,6 +30,7 @@ func main() {
 		OnStartup:        app.startup,
 		Bind: []interface{}{
 			app,
+			BackendManager.Product,
 		},
 	})
 

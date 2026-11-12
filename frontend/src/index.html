@@ -3,13 +3,40 @@
     <head>
         <meta charset="UTF-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <title>flash</title>
+        <title>Ecco-Flash</title>
         <link href="/main.css" rel="stylesheet" />
     </head>
     <body>
-        <div class="app" id="app">
-            <h1>Flash</h1>
-        </div>
+        <nav>
+            <div id="nav-header">
+                <p id="nav-title">Ecco-Flash</p>
+                <div id="container-user"></div>
+                <p id="user-name">Usuario</p>
+            </div>
+            <hr />
+            <ul id="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Pedidos</a></li>
+                <li><a href="#">Inventario</a></li>
+                <li><a href="#">Whishlist</a></li>
+            </ul>
+            <div id="nav-footer">
+                <ul id="nav-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Gráficos</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section id="primary">
+            <div id="graph">
+                <canvas id="miGrafica"></canvas>
+            </div>
+            <div id="list-sales">
+                <canvas id="topProductosGrafica"></canvas>
+            </div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="/main.js"></script>
     </body>
 </html>
