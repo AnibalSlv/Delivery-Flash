@@ -1,18 +1,105 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Dashboard | Ecco-Flash</title>
+        <link href="/main.css" rel="stylesheet" />
     </head>
     <body>
         <nav>
-            <p>Flash</p>
-            <ul>
-                <li>Inicio</li>
-                <li>Shop</li>
-                <li>Graficos</li>
+            <div id="nav-header">
+                <p id="nav-title">Ecco-Flash</p>
+                <div id="container-user"></div>
+                <p id="user-name">Usuario</p>
+            </div>
+            <hr />
+            <ul id="nav-links">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/modules/dashboard/index.html" aria-current="page">Dashboard</a></li>
+                <li><a href="/modules/orders/index.html">Pedidos</a></li>
+                <li><a href="/modules/inventory/index.html">Inventario</a></li>
             </ul>
+            <div id="nav-footer">
+                <ul>
+                    <li><a href="/index.html">Volver a la tienda</a></li>
+                </ul>
+            </div>
         </nav>
+        <section id="summary">
+            <div class="data">
+                <div>
+                    <p class="sub-title">Ingresos totales</p>
+                    <p class="text-data">$1234,5</p>
+                    <p class="comparison">+12.8% vs semana pasada</p>
+                </div>
+            </div>
+            <div class="data">
+                <div>
+                    <p class="sub-title">Pedidos recibidos</p>
+                    <p class="text-data">123</p>
+                    <p class="comparison">-12% vs semana pasada</p>
+                </div>
+            </div>
+            <div class="data">
+                <div>
+                    <p class="sub-title">Clientes nuevos</p>
+                    <p class="text-data">12</p>
+                    <p class="comparison">2.2% vs semana pasada</p>
+                </div>
+            </div>
+            <div class="data">
+                <div>
+                    <p class="sub-title">Calificacion media</p>
+                    <p class="text-data">4.8</p>
+                    <p class="comparison">-0.1% vs semana pasada</p>
+                </div>
+            </div>
+        </section>
+        <section id="primary">
+            <div id="graph">
+                <canvas id="miGrafica"></canvas>
+            </div>
+            <div id="list-sales">
+                <canvas id="topProductosGrafica"></canvas>
+            </div>
+        </section>
+        <section id="secondary">
+            <div id="history">
+                <table>
+                    <caption>Ultimos Pedidos</caption>
+                    <thead>
+                        <tr>
+                            <th>Orden</th>
+                            <th>Cliente</th>
+                            <th>Articulos</th>
+                            <th>Hora</th>
+                            <th>Estado</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#910AF3</td>
+                            <td>Usuario 1</td>
+                            <td>4</td>
+                            <td>22:30</td>
+                            <td>Pendiente</td>
+                            <td>20$</td>
+                        </tr>
+                        <tr>
+                            <td>#910AF3</td>
+                            <td>Usuario 1</td>
+                            <td>4</td>
+                            <td>22:30</td>
+                            <td>Pendiente</td>
+                            <td>20$</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="/main.js"></script>
     </body>
 </html>

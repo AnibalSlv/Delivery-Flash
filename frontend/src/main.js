@@ -5,22 +5,22 @@ const nameElement = document.getElementById("name");
 const greetBtn = document.getElementById("btnGreet");
 const resultElement = document.getElementById("result");
 
-const primaryColor = "#90a955";
-const secondaryColor = "#4f772d";
-const textColor = "#ecf39e";
+const primaryColor = "#495057";
+const secondaryColor = "#adb5bd";
+const textColor = "#e9ecef";
 
 // Paleta de colores para las porciones de la gráfica circular
 const chartPalette = [
-  "#ecf39e",
-  "#b5c99a",
-  "#7f9b52",
-  "#588157",
-  "#3a5a40",
-  "#a3b18a",
-  "#dad7cd",
-  "#606c38",
-  "#283618",
-  "#c2c5aa",
+  "#000000",
+  "#343a40",
+  "#495057",
+  "#6c757d",
+  "#adb5bd",
+  "#ced4da",
+  "#dee2e6",
+  "#e9ecef",
+  "#f8f9fa",
+  "#ffffff",
 ];
 
 if (nameElement) {

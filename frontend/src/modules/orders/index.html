@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pedidos | Ecco-Flash</title>
+        <link href="/main.css" rel="stylesheet" />
+        <link href="/modules/orders/orders.css" rel="stylesheet" />
+    </head>
+    <body class="orders-page">
+        <nav>
+            <div id="nav-header">
+                <p id="nav-title">Ecco-Flash</p>
+                <div id="container-user"></div>
+                <p id="user-name">Usuario</p>
+            </div>
+            <hr />
+            <ul id="nav-links">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/modules/dashboard/index.html">Dashboard</a></li>
+                <li><a href="/modules/orders/index.html" aria-current="page">Pedidos</a></li>
+                <li><a href="/modules/inventory/index.html">Inventario</a></li>
+            </ul>
+            <div id="nav-footer">
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Gráficos</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main id="orders-main">
+            <header class="orders-header">
+                <div>
+                    <p class="orders-eyebrow">GESTIÓN DE VENTAS</p>
+                    <h1>Pedidos</h1>
+                    <p class="orders-description">Consulta y da seguimiento a tus pedidos.</p>
+                </div>
+                <button class="orders-export-button" type="button">↓ Exportar</button>
+            </header>
+
+            <section class="orders-summary" aria-label="Resumen de pedidos">
+                <article class="orders-summary-card">
+                    <span>Todos los pedidos</span>
+                    <strong>128</strong>
+                    <small>Este mes</small>
+                </article>
+                <article class="orders-summary-card">
+                    <span>Pendientes</span>
+                    <strong>12</strong>
+                    <small>Por preparar</small>
+                </article>
+                <article class="orders-summary-card">
+                    <span>En camino</span>
+                    <strong>8</strong>
+                    <small>En reparto</small>
+                </article>
+                <article class="orders-summary-card">
+                    <span>Entregados</span>
+                    <strong>108</strong>
+                    <small>Completados</small>
+                </article>
+            </section>
+
+            <section class="orders-list" aria-labelledby="orders-list-title">
+                <div class="orders-list-header">
+                    <div>
+                        <h2 id="orders-list-title">Lista de pedidos</h2>
+                        <p>Un resumen de los pedidos más recientes.</p>
+                    </div>
+                    <label class="orders-search">
+                        <span class="visually-hidden">Buscar pedido o cliente</span>
+                        <input type="search" placeholder="Buscar pedido o cliente" />
+                    </label>
+                </div>
+
+                <div class="orders-filters" aria-label="Filtrar por estado">
+                    <button class="is-selected" type="button">Todos <span>128</span></button>
+                    <button type="button">Pendientes <span>12</span></button>
+                    <button type="button">En camino <span>8</span></button>
+                    <button type="button">Entregados <span>108</span></button>
+                </div>
+
+                <div class="orders-table-wrap">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Pedido</th>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th>Artículos</th>
+                                <th>Estado</th>
+                                <th>Total</th>
+                                <th><span class="visually-hidden">Acción</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#FL-1048</strong></td>
+                                <td>
+                                    <span class="orders-customer">María González</span>
+                                    <span class="orders-customer-email">maria.g@email.com</span>
+                                </td>
+                                <td>21 nov, 09:32</td>
+                                <td>3 artículos</td>
+                                <td><span class="order-status status-pending">Pendiente</span></td>
+                                <td><strong>$ 24.50</strong></td>
+                                <td><button type="button" class="order-detail-button">Ver</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#FL-1047</strong></td>
+                                <td>
+                                    <span class="orders-customer">Carlos Méndez</span>
+                                    <span class="orders-customer-email">carlos.m@email.com</span>
+                                </td>
+                                <td>21 nov, 09:15</td>
+                                <td>5 artículos</td>
+                                <td><span class="order-status status-shipping">En camino</span></td>
+                                <td><strong>$ 48.20</strong></td>
+                                <td><button type="button" class="order-detail-button">Ver</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#FL-1046</strong></td>
+                                <td>
+                                    <span class="orders-customer">Lucía Ramírez</span>
+                                    <span class="orders-customer-email">lucia.r@email.com</span>
+                                </td>
+                                <td>21 nov, 08:54</td>
+                                <td>2 artículos</td>
+                                <td><span class="order-status status-delivered">Entregado</span></td>
+                                <td><strong>$ 16.75</strong></td>
+                                <td><button type="button" class="order-detail-button">Ver</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#FL-1045</strong></td>
+                                <td>
+                                    <span class="orders-customer">Andrés Pérez</span>
+                                    <span class="orders-customer-email">andres.p@email.com</span>
+                                </td>
+                                <td>21 nov, 08:40</td>
+                                <td>4 artículos</td>
+                                <td><span class="order-status status-delivered">Entregado</span></td>
+                                <td><strong>$ 32.00</strong></td>
+                                <td><button type="button" class="order-detail-button">Ver</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#FL-1044</strong></td>
+                                <td>
+                                    <span class="orders-customer">Sofía Torres</span>
+                                    <span class="orders-customer-email">sofia.t@email.com</span>
+                                </td>
+                                <td>20 nov, 18:26</td>
+                                <td>1 artículo</td>
+                                <td><span class="order-status status-cancelled">Cancelado</span></td>
+                                <td><strong>$ 8.90</strong></td>
+                                <td><button type="button" class="order-detail-button">Ver</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <footer class="orders-pagination">
+                    <span>Mostrando 5 de 128 pedidos</span>
+                    <div>
+                        <button type="button" disabled>Anterior</button>
+                        <button type="button">Siguiente</button>
+                    </div>
+                </footer>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,42 +1,184 @@
 <!doctype html>
-<html>
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <title>Ecco-Flash</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inicio | Ecco-Flash</title>
         <link href="/main.css" rel="stylesheet" />
+        <link href="/customer-home.css" rel="stylesheet" />
     </head>
-    <body>
-        <nav>
-            <div id="nav-header">
-                <p id="nav-title">Ecco-Flash</p>
-                <div id="container-user"></div>
-                <p id="user-name">Usuario</p>
-            </div>
-            <hr />
-            <ul id="nav-links">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Pedidos</a></li>
-                <li><a href="#">Inventario</a></li>
-                <li><a href="#">Whishlist</a></li>
+    <body class="customer-home-page">
+        <nav class="store-nav">
+            <a class="store-brand" href="/index.html">Ecco<span>Flash</span></a>
+            <ul class="store-links">
+                <li><a href="/index.html" aria-current="page">Inicio</a></li>
+                <li><a href="#products">Productos</a></li>
+                <li><a href="#offers">Ofertas</a></li>
             </ul>
-            <div id="nav-footer">
-                <ul id="nav-links">
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">Gráficos</a></li>
-                </ul>
+            <div class="store-nav-actions">
+                <a class="store-wishlist-link" href="#products">♡ <span>Favoritos</span></a>
+                <button class="store-cart-button" id="open-cart" type="button" aria-controls="cart-panel" aria-expanded="false">
+                    🛒 Carrito <span class="cart-count" id="cart-count" aria-live="polite">0</span>
+                </button>
+                <a class="store-dashboard-link" href="/modules/dashboard/index.html">Dashboard</a>
             </div>
         </nav>
-        <section id="primary">
-            <div id="graph">
-                <canvas id="miGrafica"></canvas>
+
+        <main class="store-main">
+            <section class="store-hero" id="offers">
+                <div class="store-hero-copy">
+                    <span class="store-pill">FRESCO, RÁPIDO Y CERCA DE TI</span>
+                    <h1>Lo que necesitas,<br />a un <span>Flash</span> de distancia.</h1>
+                    <p>Encuentra tus productos favoritos y disfruta de una compra sencilla, todos los días.</p>
+                    <a class="store-primary-button" href="#products">Explorar productos <span>→</span></a>
+                </div>
+                <div class="store-hero-art" aria-hidden="true">
+                    <span class="hero-orbit orbit-one"></span>
+                    <span class="hero-orbit orbit-two"></span>
+                    <span class="hero-sparkle">✦</span>
+                    <span class="hero-bag">🛍️</span>
+                    <div class="hero-offer">
+                        <span>OFERTA DE LA SEMANA</span>
+                        <strong>20% OFF</strong>
+                        <small>en tus favoritos</small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="store-categories" aria-labelledby="categories-title">
+                <div class="store-section-heading">
+                    <div>
+                        <span class="store-kicker">ENCUENTRA LO TUYO</span>
+                        <h2 id="categories-title">Compra por categoría</h2>
+                    </div>
+                    <a href="#products">Ver todo <span>→</span></a>
+                </div>
+                <div class="category-grid">
+                    <a class="category-card category-fruit" href="#products">
+                        <span aria-hidden="true">🍓</span><strong>Frutas y verduras</strong>
+                    </a>
+                    <a class="category-card category-drink" href="#products">
+                        <span aria-hidden="true">🥤</span><strong>Bebidas</strong>
+                    </a>
+                    <a class="category-card category-dairy" href="#products">
+                        <span aria-hidden="true">🥛</span><strong>Lácteos</strong>
+                    </a>
+                    <a class="category-card category-pantry" href="#products">
+                        <span aria-hidden="true">🥫</span><strong>Despensa</strong>
+                    </a>
+                </div>
+            </section>
+
+            <section class="store-products" id="products" aria-labelledby="products-title">
+                <div class="store-section-heading">
+                    <div>
+                        <span class="store-kicker">SELECCIÓN PARA TI</span>
+                        <h2 id="products-title">Productos destacados</h2>
+                    </div>
+                    <label class="store-search">
+                        <span class="visually-hidden">Buscar productos</span>
+                        <input id="product-search" type="search" placeholder="Buscar productos..." />
+                    </label>
+                </div>
+                <div class="store-product-grid">
+                    <article class="store-product-card" data-name="Fresas frescas" data-category="Frutas y verduras" data-price="3.50" data-icon="🍓">
+                        <div class="store-product-art art-fruit"><span aria-hidden="true">🍓</span><span class="product-tag">FRESCO</span></div>
+                        <div class="store-product-info">
+                            <span class="product-category">Frutas y verduras</span>
+                            <h3>Fresas frescas</h3>
+                            <p>Canasta · 500 g</p>
+                            <div class="product-buy-row"><strong>$ 3.50</strong><button class="add-to-cart" type="button">Agregar <span>+</span></button></div>
+                        </div>
+                    </article>
+                    <article class="store-product-card" data-name="Gaseosa Cola" data-category="Bebidas" data-price="2.50" data-icon="🥤">
+                        <div class="store-product-art art-drink"><span aria-hidden="true">🥤</span><span class="product-tag">POPULAR</span></div>
+                        <div class="store-product-info">
+                            <span class="product-category">Bebidas</span>
+                            <h3>Gaseosa Cola</h3>
+                            <p>Botella · 1.5 L</p>
+                            <div class="product-buy-row"><strong>$ 2.50</strong><button class="add-to-cart" type="button">Agregar <span>+</span></button></div>
+                        </div>
+                    </article>
+                    <article class="store-product-card" data-name="Pan artesanal" data-category="Panadería" data-price="3.20" data-icon="🍞">
+                        <div class="store-product-art art-bread"><span aria-hidden="true">🍞</span><span class="product-tag">DEL DÍA</span></div>
+                        <div class="store-product-info">
+                            <span class="product-category">Panadería</span>
+                            <h3>Pan artesanal</h3>
+                            <p>Horneado hoy · 500 g</p>
+                            <div class="product-buy-row"><strong>$ 3.20</strong><button class="add-to-cart" type="button">Agregar <span>+</span></button></div>
+                        </div>
+                    </article>
+                    <article class="store-product-card" data-name="Café molido" data-category="Despensa" data-price="5.40" data-icon="☕">
+                        <div class="store-product-art art-coffee"><span aria-hidden="true">☕</span><span class="product-tag">FAVORITO</span></div>
+                        <div class="store-product-info">
+                            <span class="product-category">Despensa</span>
+                            <h3>Café molido</h3>
+                            <p>Paquete · 250 g</p>
+                            <div class="product-buy-row"><strong>$ 5.40</strong><button class="add-to-cart" type="button">Agregar <span>+</span></button></div>
+                        </div>
+                    </article>
+                    <p class="store-no-results" id="no-products" hidden>No encontramos productos con ese nombre.</p>
+                </div>
+            </section>
+
+            <footer class="store-footer">
+                <a class="store-brand" href="/index.html">Ecco<span>Flash</span></a>
+                <p>Tu compra diaria, más fácil y más cerca.</p>
+                <a href="/modules/dashboard/index.html">Acceso de desarrollo: Dashboard</a>
+            </footer>
+        </main>
+
+        <div class="cart-backdrop" id="cart-backdrop" hidden></div>
+        <aside class="cart-panel" id="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+            <header class="cart-header">
+                <div>
+                    <span class="store-kicker">TU COMPRA</span>
+                    <h2 id="cart-title">Carrito <span id="cart-title-count">(0)</span></h2>
+                </div>
+                <button class="cart-close" id="close-cart" type="button" aria-label="Cerrar carrito">×</button>
+            </header>
+            <div class="cart-view" id="cart-view">
+                <div class="cart-items" id="cart-items"></div>
+                <footer class="cart-footer">
+                    <div class="cart-subtotal"><span>Subtotal</span><strong id="cart-subtotal">$ 0.00</strong></div>
+                    <p>El envío se calcula al finalizar la compra.</p>
+                    <button class="cart-checkout" id="checkout-button" type="button" disabled>Finalizar compra</button>
+                    <small>El proceso de pago estará disponible próximamente.</small>
+                </footer>
             </div>
-            <div id="list-sales">
-                <canvas id="topProductosGrafica"></canvas>
-            </div>
-        </section>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script src="/main.js"></script>
+            <section class="checkout-view" id="checkout-view" aria-labelledby="checkout-title" hidden>
+                <button class="checkout-back" id="back-to-cart" type="button">← Volver al carrito</button>
+                <h2 id="checkout-title">Datos de entrega</h2>
+                <p class="checkout-description">Completa tus datos para preparar tu pedido.</p>
+                <form id="checkout-form">
+                    <label>
+                        Nombre completo
+                        <input name="name" type="text" autocomplete="name" placeholder="Tu nombre" required />
+                    </label>
+                    <label>
+                        Correo electrónico
+                        <input name="email" type="email" autocomplete="email" placeholder="nombre@correo.com" required />
+                    </label>
+                    <label>
+                        Teléfono
+                        <input name="phone" type="tel" autocomplete="tel" placeholder="Tu teléfono" required />
+                    </label>
+                    <label>
+                        Dirección de entrega
+                        <textarea name="address" autocomplete="street-address" rows="3" placeholder="Calle, número, ciudad" required></textarea>
+                    </label>
+                    <div class="checkout-total">
+                        <span>Total de productos</span>
+                        <strong id="checkout-total">$ 0.00</strong>
+                    </div>
+                    <button class="cart-checkout" type="submit">Revisar datos</button>
+                    <p class="checkout-message" id="checkout-message" role="status" hidden>
+                        Datos completos. El envío del pedido estará disponible cuando se conecte el backend.
+                    </p>
+                    <small>Esta demostración no guarda ni envía tus datos.</small>
+                </form>
+            </section>
+        </aside>
+        <script src="/customer-home.js"></script>
     </body>
 </html>

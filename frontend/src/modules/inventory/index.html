@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inventario | Ecco-Flash</title>
+        <link href="/main.css" rel="stylesheet" />
+        <link href="/modules/inventory/inventory.css" rel="stylesheet" />
+    </head>
+    <body class="inventory-page">
+        <nav>
+            <div id="nav-header">
+                <p id="nav-title">Ecco-Flash</p>
+                <div id="container-user"></div>
+                <p id="user-name">Usuario</p>
+            </div>
+            <hr />
+            <ul id="nav-links">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/modules/dashboard/index.html">Dashboard</a></li>
+                <li><a href="/modules/orders/index.html">Pedidos</a></li>
+                <li><a href="/modules/inventory/index.html" aria-current="page">Inventario</a></li>
+            </ul>
+            <div id="nav-footer">
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Gráficos</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main id="inventory-main">
+            <header class="inventory-header">
+                <div>
+                    <p class="inventory-eyebrow">CATÁLOGO</p>
+                    <h1>Inventario</h1>
+                    <p class="inventory-description">Administra tus productos y revisa sus existencias.</p>
+                </div>
+                <button class="inventory-add-button" type="button">+ Agregar producto</button>
+            </header>
+
+            <section class="inventory-summary" aria-label="Resumen de inventario">
+                <article class="inventory-summary-card">
+                    <span>Productos totales</span>
+                    <strong>248</strong>
+                    <small>En el catálogo</small>
+                </article>
+                <article class="inventory-summary-card">
+                    <span>En stock</span>
+                    <strong>216</strong>
+                    <small>Disponibles</small>
+                </article>
+                <article class="inventory-summary-card inventory-low-card">
+                    <span>Stock bajo</span>
+                    <strong>24</strong>
+                    <small>Requieren atención</small>
+                </article>
+                <article class="inventory-summary-card inventory-out-card">
+                    <span>Agotados</span>
+                    <strong>8</strong>
+                    <small>Sin existencias</small>
+                </article>
+            </section>
+
+            <section class="inventory-list" aria-labelledby="inventory-list-title">
+                <div class="inventory-list-header">
+                    <div>
+                        <h2 id="inventory-list-title">Productos</h2>
+                        <p>Consulta las existencias de tus productos.</p>
+                    </div>
+                    <div class="inventory-tools">
+                        <label class="inventory-search">
+                            <span class="visually-hidden">Buscar producto</span>
+                            <input type="search" placeholder="Buscar producto" />
+                        </label>
+                        <label class="inventory-category">
+                            <span class="visually-hidden">Filtrar por categoría</span>
+                            <select>
+                                <option>Todas las categorías</option>
+                                <option>Bebidas</option>
+                                <option>Despensa</option>
+                                <option>Lácteos</option>
+                                <option>Panadería</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="inventory-table-wrap">
+                    <table class="inventory-table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Categoría</th>
+                                <th>SKU</th>
+                                <th>Precio</th>
+                                <th>Existencias</th>
+                                <th>Estado</th>
+                                <th><span class="visually-hidden">Acción</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="inventory-product">
+                                        <span class="inventory-product-icon product-cola" aria-hidden="true">🥤</span>
+                                        <span>Gaseosa Cola<small>Botella · 1.5 L</small></span>
+                                    </span>
+                                </td>
+                                <td>Bebidas</td>
+                                <td>BE-001</td>
+                                <td><strong>$ 2.50</strong></td>
+                                <td>
+                                    <span class="inventory-quantity">42 unidades</span>
+                                    <span class="inventory-stock-track"><span style="width: 84%"></span></span>
+                                </td>
+                                <td><span class="inventory-status inventory-available">En stock</span></td>
+                                <td><button class="inventory-action" type="button" aria-label="Más opciones para Gaseosa Cola">···</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="inventory-product">
+                                        <span class="inventory-product-icon product-milk" aria-hidden="true">🥛</span>
+                                        <span>Leche entera<small>Cartón · 1 L</small></span>
+                                    </span>
+                                </td>
+                                <td>Lácteos</td>
+                                <td>LA-014</td>
+                                <td><strong>$ 1.80</strong></td>
+                                <td>
+                                    <span class="inventory-quantity">8 unidades</span>
+                                    <span class="inventory-stock-track low"><span style="width: 22%"></span></span>
+                                </td>
+                                <td><span class="inventory-status inventory-low">Stock bajo</span></td>
+                                <td><button class="inventory-action" type="button" aria-label="Más opciones para Leche entera">···</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="inventory-product">
+                                        <span class="inventory-product-icon product-bread" aria-hidden="true">🍞</span>
+                                        <span>Pan artesanal<small>Panadería · 500 g</small></span>
+                                    </span>
+                                </td>
+                                <td>Panadería</td>
+                                <td>PA-006</td>
+                                <td><strong>$ 3.20</strong></td>
+                                <td>
+                                    <span class="inventory-quantity">0 unidades</span>
+                                    <span class="inventory-stock-track empty"><span></span></span>
+                                </td>
+                                <td><span class="inventory-status inventory-empty">Agotado</span></td>
+                                <td><button class="inventory-action" type="button" aria-label="Más opciones para Pan artesanal">···</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="inventory-product">
+                                        <span class="inventory-product-icon product-coffee" aria-hidden="true">☕</span>
+                                        <span>Café molido<small>Paquete · 250 g</small></span>
+                                    </span>
+                                </td>
+                                <td>Despensa</td>
+                                <td>DE-022</td>
+                                <td><strong>$ 5.40</strong></td>
+                                <td>
+                                    <span class="inventory-quantity">31 unidades</span>
+                                    <span class="inventory-stock-track"><span style="width: 62%"></span></span>
+                                </td>
+                                <td><span class="inventory-status inventory-available">En stock</span></td>
+                                <td><button class="inventory-action" type="button" aria-label="Más opciones para Café molido">···</button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="inventory-product">
+                                        <span class="inventory-product-icon product-rice" aria-hidden="true">🍚</span>
+                                        <span>Arroz blanco<small>Bolsa · 1 kg</small></span>
+                                    </span>
+                                </td>
+                                <td>Despensa</td>
+                                <td>DE-031</td>
+                                <td><strong>$ 2.10</strong></td>
+                                <td>
+                                    <span class="inventory-quantity">5 unidades</span>
+                                    <span class="inventory-stock-track low"><span style="width: 14%"></span></span>
+                                </td>
+                                <td><span class="inventory-status inventory-low">Stock bajo</span></td>
+                                <td><button class="inventory-action" type="button" aria-label="Más opciones para Arroz blanco">···</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <footer class="inventory-pagination">
+                    <span>Mostrando 5 de 248 productos</span>
+                    <div>
+                        <button type="button" disabled>Anterior</button>
+                        <button type="button">Siguiente</button>
+                    </div>
+                </footer>
+            </section>
+        </main>
+    </body>
+</html>

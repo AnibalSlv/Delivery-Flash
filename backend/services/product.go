@@ -16,5 +16,5 @@ type TopProduct struct {
 }
 
 func (p *ProductService) GetProductTop() []TopProduct {
-	return []TopProduct{{Name: "Coca-Cola", Price: 0}, {Name: "sad", Price: 1}}
+	return []TopProduct{{Name: "Coca-Cola", Price: 134}, {Name: "sad", Price: 180}}
 }
